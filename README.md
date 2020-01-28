@@ -1,24 +1,65 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 積読とは？
+未読の本を積んだままにしている状態のこと。
 
-Things you may want to cover:
+## 作成概要
+下記条件を満たした仕組みのアプリを作ることで、読書アウトプットによるスキルアップを図ることを目的としたアプリ。
+・読書の習慣化 × アウトプットの習慣化の仕組み<br>
+・ウェアラブル性<br>
 
-* Ruby version
+## 作成背景
+・「レバレッジ・リーディング」（著：本田 直之 氏）より、読書を目的とせずに目的のための読書にして、埋もれる読書から自分に生かしていく読書にしていくべきであるとの考えから、アウトプットメモを作ろうと思ったのがきっかけです。
 
-* System dependencies
+## Requirement
+・ruby ：2.5.1<br>
+・rails：5.2.3<br>
 
-* Configuration
+## E-R図
+<img width="600" alt="tsundoku" src="https://gyazo.com/bc7d2dd3e44a8d3af582a30c1dcdedad.png">
 
-* Database creation
+# Userテーブル
+|カラム名|タイプ|オプション|
+|--|--|--|
+| name      | string | null: false |
+| email     | string | null: false, unique: true |
+| password  | string | null: false |
+| nickname  | string | null: false, unique: true |
 
-* Database initialization
+### Association
+- has_many : book
+- has_many : comment
 
-* How to run the test suite
+---
+## Bookテーブル
+|カラム名|タイプ|オプション|
+|--|--|--|
+| title   | string | null: false |
+| content | text   | null: false |
+| user_id | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- has_one : tag
+- belongs_to :user
 
-* Deployment instructions
+---
+## Commentテーブル
+|カラム名|タイプ|オプション|
+|--|--|--|
+| content  | string | null: false |
+| user_id  | references | null: false, foreign_key: true |
+| book_id  | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :book
+
+---
+## Tagテーブル
+|カラム名|タイプ|オプション|
+|--|--|--|
+| tag      | string | null: false |
+| tweet_id | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :book
