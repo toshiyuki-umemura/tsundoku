@@ -1,0 +1,119 @@
+@import "reset";
+@import "./config/*";
+@import "./mixin/*";
+@import "./modules/*";
+@import 'font-awesome';
+
+.header {
+  display: block;
+  text-align: center;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  border-bottom: 3px double #eee;
+
+  &__logo img {
+    left: 20px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+  }
+
+  &__title {
+    position: relative;
+    left:-60px;
+    font-size: 35px;
+    margin-top: 20px;
+    background: -webkit-gradient(
+                linear, left top, right bottom,
+                from(#ffffff),
+                color-stop(60%, #ffcc00),
+                color-stop(80%, #ff9900),
+                to(#ff6600));
+                color: #993300;
+                text-shadow: 1px 1px #ffffff;
+                border-radius:  25%;
+
+    span {
+      border-radius:  55%;
+      background-color: #ff9900;
+      padding:  15px;
+      font-size: 40px;
+      margin-right: 5px; 
+    }
+  }
+
+  &__nav {
+    position: relative;
+    right: 30px;
+    font-size: 17px;
+    padding: 0 10px;
+
+    &__user {
+      position: relative;
+      top: 40px;
+      right: 130px;
+      display: flex;
+      height: 2rem;
+
+      &--nickname {
+        list-style: none;
+        position: relative;
+        padding: 0 10px;
+
+        li {
+          height: 0;
+          overflow: hidden;
+          transition: .5s;
+
+          a {
+            border-top: 1px solid #eee;
+          }
+        }
+      }
+
+      a {
+        background: #6eb7ff;
+        border-right: 1px solid #eee;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border-bottom: solid 4px #aac5de;
+        border-radius: 10px;
+        padding: 0.5em 0.8em;
+      }
+
+      li:hover {
+        ul {
+          li {
+            height: 2.2rem;
+            overflow: visible;
+          }
+        }
+      }
+    }
+
+    &__button {
+      &--action {
+        position: relative;
+        top: 30px;
+        padding: 0.5em 0.8em;
+        color: white;
+        background: #6eb7ff;
+        border-bottom: solid 4px #aac5de;
+        border-radius: 10px;
+      }
+
+      &--top {
+        position: relative;
+        top: 7px;
+      }
+    }
+  }
+}
