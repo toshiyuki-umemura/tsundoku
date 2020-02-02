@@ -14,33 +14,6 @@
   </head>
 
   <body>
-    <header class="header">
-      <p class="header__logo"><%= link_to image_tag('book_logo.png'), '/' %></p>
-      <h1 class="header__title"><a href="/"><span>積</span>読スッキリ！</a></h1>
-      <div class="header__nav">
-        <% if user_signed_in? %>
-          <div class="header__nav__user">
-            <li class="header__nav__user--nickname">
-              <%= current_user.nickname %>
-              <span>しゅん</span>
-                <ul>
-                  <li><%= link_to "マイページ", "/" %></li>
-                  <li><%= link_to "ログアウト", "/" %></li>
-                </ul>
-            </li>
-          </div>
-          <div class="header__nav__button">
-            <%= link_to "投稿する", "/", class: 'header__nav__button--action header__nav__button--top' %>
-          </div>
-        <% else %>
-          <div class="header__nav__button">
-            <%= link_to "ログイン", new_user_session_path, class: 'header__nav__button--action' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'header__nav__button--action' %>
-          </div>
-        <% end %>
-      </div>
-    </header>
-
     <%= yield %>
   </body>
 </html>
