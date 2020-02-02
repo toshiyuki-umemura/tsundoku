@@ -1,31 +1,4 @@
-<div class="top">
-  <header class="top__header">
-    <div class="top__header__logo">
-      <section>
-        <%= image_tag 'book_logo.png' %>
-      </section>
-    </div>
-      <div class="top__header__menu">
-        <ul class="top__header__menu--ul">
-          <li class="top__header__menu--list1">
-            <span class="top__header__menu--figure1"><%= link_to "積読スッキリ!!", "/" %></span>
-            <%= image_tag 'menu_title.png', class: "top__header__menu--img" %>
-          </li>
-          <li class="top__header__menu--list2">
-            <span class="top__header__menu--figure2"><%= link_to "新規登録（マイページ）", "/" %></span>
-            <%= image_tag 'signup-mypage.png', class: "top__header__menu--img" %>
-          </li>
-          <li class="top__header__menu--list3">
-            <span class="top__header__menu--figure3"><%= link_to "ログイン（ログアウト）", "/" %></span>
-            <%= image_tag 'signin-signout.png', class: "top__header__menu--img" %>
-          </li>
-          <li class="top__header__menu--list4">
-            <span class="top__header__menu--figure4"><%= link_to "投稿する", "/" %></span>
-            <%= image_tag 'toukou.png', class: "top__header__menu--img top__header__menu--opacity" %>
-          </li>
-        </ul>
-      </div>
-  </header>
+<%= render "header" %>
 
   <div class="top__main">
     <section class="top__main--section">
@@ -84,5 +57,3 @@
   <small class="top__footer__copyright">Copyright&copy; <a href="index.html">T.U.</a></small>
   <p class="top__footer__jump"><a href="#">🔝</a></p>
   </footer>
-
-</div>
