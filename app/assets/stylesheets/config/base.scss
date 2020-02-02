@@ -1,6 +1,4 @@
 html {
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
 }
 
@@ -23,9 +21,151 @@ a {
 }
 
 img {
-  vertical-align: middle;
-}
+  border: none;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;}
 
 ol, ul {
   list-style: none;
+}
+
+* {
+	margin:0; padding:0;
+}
+
+html{
+  color:#000;
+  background:#FFF;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  font-size: 100%;
+  border-spacing: 0;}
+fieldset,
+img {
+  border:0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+ol,
+ul {
+  list-style:none;
+}
+
+caption,
+th {
+  text-align:left;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content:'';
+}
+
+abbr,
+acronym {
+  border:0;
+  font-variant:normal;
+}
+
+sup {
+  vertical-align:text-top;
+}
+sub {
+  vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+  *font-size:100%;
+}
+
+legend {
+  color:#000;
+}
+
+body {
+	color: #666;
+	font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 15px;
+	line-height: 2;
+	background: #fff url(bg.jpg) repeat center center/150px;
+	-webkit-text-size-adjust: none;
+}
+
+a {
+	color: #666;
+	transition: 0.4s;
+}
+a:hover {
+	color: #cd6052;
+	text-decoration: none;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+ol {
+  padding-left: 40px;
+  padding-bottom: 15px;
 }
