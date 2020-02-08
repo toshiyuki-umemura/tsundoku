@@ -81,3 +81,5 @@ gem 'gretel'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
 gem 'devise'
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons'
