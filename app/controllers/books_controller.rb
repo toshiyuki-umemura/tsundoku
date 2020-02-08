@@ -15,5 +15,8 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit( :title, :content, tags_attributes: [:id, :book_id, :tag])
   end
+  
+  def destroy
+  end
 
 end
