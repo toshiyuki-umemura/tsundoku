@@ -7,24 +7,24 @@
       <div class="new__container__contents">
         <%= form_for(@book) do |form| %>
 
-          <div class="new__container__contents--field">
+          <div class="new__container__contents__field">
             <%= form.label :title, "タイトル" %>
             <%= form.text_field :title %>
           </div>
 
-          <div class="new__container__contents--field">
+          <div class="new__container__contents__field--content">
             <%= form.label :content, "内容" %>
-            <%= form.text_field :content %>
+            <p><%= form.text_area :content %></p>
           </div>
 
             <%= form.fields_for :tags do |tag__form| %>
-              <div class="new__container__contents--field">
+              <div class="new__container__contents__field">
                 <%= tag__form.label :tag, "タグ" %>
                   <%= tag__form.text_field :tag %>
               </div>
             <% end %>
-
-          <%= form.submit "送信する" %>
+          <div class="new__container__contents__submit">
+          <%= form.submit "送信する", class:"new__container__contents__submit--button" %></div>
         <% end %>
       </div>
 
