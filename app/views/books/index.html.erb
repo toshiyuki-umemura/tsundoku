@@ -10,10 +10,21 @@
           <div class="top__main__contents__glid">
 
             <div class="top__main__contents__glid__header">
-              <div class="top__main__contents__glid__header--title"><span>タイトル： </span><%= book.title %></div>
+              <div class="top__main__contents__glid__header--title">
+                <span>タイトル： </span><%= book.title %>
+              </div>
                 <div class="top__main__contents__glid__header__others">
+
                   <ul class="top__main__contents__glid__header__others__ul">
                     <li class="top__main__contents__glid__header__others__ul--li">
+                      <span class="chip content">
+                        <% book.tags.each do |t| %>
+                          <%= t.tag %>
+                        <% end %>
+                      </span>
+                    </li>
+
+                    <li class="top__main__contents__glid__header__others__ul--li2">
                       <i class="fas fa-angle-down"></i>
                         <ul class="top__main__contents__glid__header__others__ul--ul">
                           <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "編集", "/" %></span></li>
@@ -22,6 +33,7 @@
                         </ul>
                     </li>
                   </ul>
+
                 </div>
             </div>
 
