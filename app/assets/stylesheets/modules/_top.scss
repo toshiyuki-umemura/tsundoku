@@ -3,21 +3,15 @@
 
 		&__logo {
 			overflow: hidden;
-			padding: 0 4% 50px 30%;
+			padding: 10px 4% 50px 30%;
 			text-align:center;
 		}
 
 		&__menu {
-			 a:hover {
-				opacity: 0.8;
-			}
 			
 			&--img {
 				border-radius: 50%;
-			}
-
-			&--opacity {
-				opacity: 0.7;
+				opacity: 0.8;
 			}
 			
 			@keyframes menu {
@@ -84,6 +78,10 @@
 				position: fixed;
 				left: 14.5%;
 				top: 590px;
+			}
+
+			&--link {
+				color: #808080;
 			}
 		}
 	}
