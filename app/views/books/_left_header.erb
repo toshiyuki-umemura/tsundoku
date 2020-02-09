@@ -9,17 +9,33 @@
           </li>
 
           <li class="top__header__menu--list2">
-            <span class="top__header__menu--figure2"><%= link_to "新規登録（マイページ）", "/", class: "top__header__menu--link" %></span>
+            <% if user_signed_in? %>
+              <span class="top__header__menu--figure2">
+                <%= link_to "マイページ", "/users/#{current_user.id}", class: "top__header__menu--link" %>
+              </span>
+            <% else %>
+              <span class="top__header__menu--figure2">
+                <%= link_to "新規登録", new_user_registration_path, class: "top__header__menu--link" %>
+              </span>
+            <% end %>
             <%= image_tag 'signup-mypage.png', class: "top__header__menu--img" %>
           </li>
 
           <li class="top__header__menu--list3">
-            <span class="top__header__menu--figure3"><%= link_to "ログイン（ログアウト）", "/", class: "top__header__menu--link" %></span>
+            <% if user_signed_in? %>
+              <span class="top__header__menu--figure3">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "top__header__menu--link" %>
+              </span>
+            <% else %>
+              <span class="top__header__menu--figure3">
+                <%= link_to "ログイン", new_user_session_path, class: "top__header__menu--link" %>
+              </span>
+            <% end %>
             <%= image_tag 'signin-signout.png', class: "top__header__menu--img" %>
           </li>
 
           <li class="top__header__menu--list4">
-            <span class="top__header__menu--figure4"><%= link_to "投稿する", "/", class: "top__header__menu--link" %></span>
+            <span class="top__header__menu--figure4"><%= link_to "投稿する", new_book_path, class: "top__header__menu--link" %></span>
             <%= image_tag 'toukou.png', class: "top__header__menu--img" %>
           </li>
 
