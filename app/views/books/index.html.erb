@@ -42,7 +42,7 @@
             </div>
 
             <div class="top__main__contents__glid__footer">
-              <div class="top__main__contents__glid__footer--time"><span>投稿日時： </span><%= book.created_at %></div>
+              <div class="top__main__contents__glid__footer--time"><span>投稿日時： </span><%= book.created_at.strftime("%Y/%m/%d %H:%M") %></div>
               <div class="top__main__contents__glid__footer--name"><span>名前： </span><%= book.user.nickname %></div>
             </div>
 
