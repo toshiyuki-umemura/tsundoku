@@ -5,50 +5,7 @@
       <h2 class="top__main--title">Read Books</h2>
       <h3 class="top__main--detail">積読とは</h3>
 
-        <% @books.each do |book| %>
-        <div class="top__main__contents">
-          <div class="top__main__contents__glid">
-
-            <div class="top__main__contents__glid__header">
-              <div class="top__main__contents__glid__header--title">
-                <span>タイトル： </span><%= book.title %>
-              </div>
-                <div class="top__main__contents__glid__header__others">
-
-                  <ul class="top__main__contents__glid__header__others__ul">
-                    <li class="top__main__contents__glid__header__others__ul--li">
-                      <span class="chip content">
-                        <% book.tags.each do |t| %>
-                          <%= t.tag %>
-                        <% end %>
-                      </span>
-                    </li>
-
-                    <li class="top__main__contents__glid__header__others__ul--li2">
-                      <i class="fas fa-angle-down"></i>
-                        <ul class="top__main__contents__glid__header__others__ul--ul">
-                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "編集", "/books/#{book.id}/edit" %></span></li>
-                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "詳細", "/books/#{book.id}" %></span></li>
-                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to '削除', "/books/#{book.id}", method: :delete %></span></li>
-                        </ul>
-                    </li>
-                  </ul>
-
-                </div>
-            </div>
-
-            <div class="top__main__contents__glid__text">
-              <div class="top__main__contents__glid__text--content"><span>内容： </span><%= book.content %></div>
-            </div>
-
-            <div class="top__main__contents__glid__footer">
-              <div class="top__main__contents__glid__footer--time"><span>投稿日時： </span><%= book.created_at.strftime("%Y/%m/%d %H:%M") %></div>
-              <div class="top__main__contents__glid__footer--name"><span>名前： </span><%= book.user.nickname %></div>
-            </div>
-
-          </div>
-        </div>
-        <% end %>
+        <%= render "index" %>
 
     </section>
   </div>
