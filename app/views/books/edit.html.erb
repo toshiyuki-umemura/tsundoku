@@ -1,0 +1,37 @@
+<%= render "left_header" %>
+
+<div class="edit">
+  <div class="edit__container">
+    <h1 class="edit__container--header">編集する</h1>
+    
+      <div class="edit__container__contents">
+        <%= form_for(@book) do |form| %>
+
+          <div class="edit__container__contents__field">
+            <%= form.label :id, "投稿ID"  %>
+            <%= form.text_field :id, readonly:"readonly" %>
+          </div>
+
+          <div class="edit__container__contents__field">
+            <%= form.label :title, "タイトル" %>
+            <%= form.text_field :title %>
+          </div>
+
+          <div class="edit__container__contents__field--content">
+            <%= form.label :content, "内容" %>
+            <p><%= form.text_area :content %></p>
+          </div>
+
+            <%= form.fields_for :tags do |tag__form| %>
+                <div class="edit__container__contents__field">
+                  <%= tag__form.label :tag, "タグ" %>
+                    <%= tag__form.text_field :tag %>
+              </div>
+            <% end %>
+          <div class="edit__container__contents__submit">
+          <%= form.submit "更新する", class:"edit__container__contents__submit--button" %></div>
+        <% end %>
+      </div>
+
+  </div>
+</div>
