@@ -27,8 +27,8 @@
                     <li class="top__main__contents__glid__header__others__ul--li2">
                       <i class="fas fa-angle-down"></i>
                         <ul class="top__main__contents__glid__header__others__ul--ul">
-                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "編集", "/" %></span></li>
-                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "詳細", "/" %></span></li>
+                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "編集", "/books/#{book.id}/edit" %></span></li>
+                          <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to "詳細", "/books/#{book.id}" %></span></li>
                           <li class="top__main__contents__glid__header__others__ul--ul--li"><span><%= link_to '削除', "/books/#{book.id}", method: :delete %></span></li>
                         </ul>
                     </li>

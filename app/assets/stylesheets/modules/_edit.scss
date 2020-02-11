@@ -1,0 +1,53 @@
+.edit {
+  &__container {
+    
+    &--header {
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 50px;
+    }
+
+  &__contents {
+    position: relative;
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+
+    & textarea {
+      height: 150px;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #26A69a;
+      box-shadow: 0 1px 0 0 #26a69a;
+    }
+
+    &__submit {
+      text-align: center;
+
+      &--button {
+        background-color: #3366CC;
+        color: $white;
+        cursor: pointer;
+        font-weight: normal;
+        margin-top: 30px;
+        padding: 14px 0 15px;
+        width: 40%;
+        border-radius: 10px;
+        letter-spacing: 3px;
+    
+        &:active {
+          background-color: $middle-grey;
+          outline-width: 0;
+          transition: all ease-out .3s;
+        }
+      }
+    }
+  }
+  .chips input.input {
+    width: 320px !important;
+  }
+}
+
+
+}
