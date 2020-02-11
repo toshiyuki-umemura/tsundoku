@@ -44,6 +44,14 @@
       <div class="top__main__contents__glid__footer--time"><span>投稿日時： </span><%= book.created_at.strftime("%Y/%m/%d %H:%M") %></div>
       <div class="top__main__contents__glid__footer--name"><span>名前： </span><%= book.user.nickname %></div>
     </div>
+    <div class="top__main__contents__glid__footer--comment">
+      <% book.comments.each do |c| %>
+        <% if c.content %>
+          <i><%= link_to "コメントあり", "/books/#{book.id}" %></i>
+          <% break %>
+        <% end %>
+      <% end %>
+    </div>
 
   </div>
 </div>
