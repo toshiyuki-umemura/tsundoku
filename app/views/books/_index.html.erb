@@ -21,13 +21,17 @@
               <i class="fas fa-angle-down"></i>
                 <ul class="top__main__contents__glid__header__others__ul--ul">
                   <li class="top__main__contents__glid__header__others__ul--ul--li">
-                    <span><%= link_to "編集", "/books/#{book.id}/edit" %></span>
+                    <% if current_user.id == book.user_id %>
+                      <span><%= link_to "編集", "/books/#{book.id}/edit" %></span>
+                    <% end %>
                   </li>
                   <li class="top__main__contents__glid__header__others__ul--ul--li">
                     <span><%= link_to "詳細", "/books/#{book.id}" %></span>
                   </li>
                   <li class="top__main__contents__glid__header__others__ul--ul--li">
-                    <span><%= link_to '削除', "/books/#{book.id}", method: :delete %></span>
+                    <% if current_user.id == book.user_id %>
+                      <span><%= link_to '削除', "/books/#{book.id}", method: :delete %></span>
+                    <% end %>
                   </li>
                 </ul>
             </li>
