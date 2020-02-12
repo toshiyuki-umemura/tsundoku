@@ -184,7 +184,7 @@
 								padding: 0px;
 								display: none;
 								position: absolute;
-								background: url(/assets/bg1.jpg) repeat center top/12%;
+								background-image: url( "/bg1.png" ) repeat center top/12%;
 					
 								&--li {
 									width: 125px;
@@ -242,7 +242,7 @@
 		clear: both;
 		text-align: center;
 		padding: 20px;
-		background: url(/assets/bg.jpg) repeat center top/ 12%;
+		background-image: url( "/bg.png" ) repeat center top/ 12%;
 
 		&__jump {
 			font-size: 40px;
