@@ -87,7 +87,7 @@
 	&__main {
 		overflow: hidden;
 		padding: 0 4% 50px 30%;
-		background: image-url("bg1.jpg") repeat center top/ 12%;
+		background-image: image-url("bg.jpg")repeat center top/ 12%;
 
 		&--title {
 			font-size: 40px;
@@ -184,7 +184,7 @@
 								padding: 0px;
 								display: none;
 								position: absolute;
-								background: image-url("bg1.jpg") repeat center top/12%;
+								background-image: image-url("bg1.jpg") repeat center top/12%;
 					
 								&--li {
 									width: 125px;
@@ -242,7 +242,7 @@
 		clear: both;
 		text-align: center;
 		padding: 20px;
-		background: image-url("bg1.jpg") repeat center top/ 12%;
+		background-image: image-url("bg.jpg") repeat center top/ 12%;
 
 		&__jump {
 			font-size: 40px;
