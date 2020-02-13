@@ -136,7 +136,7 @@ legend {
 }
 
 html {
-  background: #fff image-url("bg.jpg") repeat center center/150px;
+  background: #fff url(bg.jpg) repeat center center/150px;
 }
 
 body {
@@ -144,7 +144,7 @@ body {
 	font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 15px;
 	line-height: 2;
-	background: #fff image-url("bg.jpg") repeat center center/150px;
+	background: #fff url(bg.jpg) repeat center center/150px;
 	-webkit-text-size-adjust: none;
 }
 
