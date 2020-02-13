@@ -239,12 +239,11 @@
 	}
 
 	&__footer {
-		font-size: 10px;
 		clear: both;
 		text-align: center;
 		padding: 20px;
-		// background: image-url("bg.jpg") repeat center top/ 12%;
-		background-image: url(asset_path('bg1.jpg'));
+		background: image-url("bg.jpg") repeat center top/ 12%;
+
 		&__jump {
 			font-size: 40px;
 		}
