@@ -3,15 +3,3 @@
 @import "./modules/*";
 @import 'font-awesome';
 @import "materialize";
-
-
-.top__footer {
-  clear: both;
-  text-align: center;
-  padding: 20px;
-  background: url("/images/bg.jpg") no-repeat center;
-
-  &__jump {
-    font-size: 40px;
-  }
-}
