@@ -1,0 +1,17 @@
+.pagination {
+  border: double;
+  border-radius: 5px;
+  background: border-box;
+
+  .page.prev {
+    padding: 0 10px;
+  }
+
+  .page.next {
+    padding: 0 10px;
+  }
+
+  .page {
+    padding: 0 2px;
+  }
+}
