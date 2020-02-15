@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
+  include Pagy::Backend
+  
   def index
-    @books = Book.all
+    @pagy, @books = pagy(Book.all)
   end
 
   def new
@@ -28,7 +30,6 @@ class BooksController < ApplicationController
       redirect_to root_path
     else
       render :edit
-      binding.pry
     end
   end
 
