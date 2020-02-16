@@ -56,10 +56,10 @@
 <!-- コメント -->
   <div class="comment__posts">
     <% if current_user %>
-      <%= form_for [@book, @comment] do |form| %>
+      <%= form_for [@book, @comment], id: "new_comment" do |form| %>
         <div class="comment__posts__field">
           <%= form.label :content, "コメント" %>
-          <%= form.text_area :content %>
+          <%= form.text_area :content, class: "textbox" %>
           <div class="comment__posts__submit">
             <%= form.submit "送信する", class:"comment__posts__submit--button" %>
           </div>
