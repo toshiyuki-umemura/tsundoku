@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   
   def index
     @pagy, @books = pagy(Book.all)
+    @tags = Tag.group(:tag).pluck(:book_id)
+    @book_tags = Book.find(@tags)
   end
 
   def new
