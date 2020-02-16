@@ -12,7 +12,7 @@
             <li class="top__main__contents__glid__header__others__ul--li">
               <span class="chip content">
                 <% book.tags.each do |t| %>
-                  <%= t.tag %>
+                  <%= link_to t.tag, tag_path(t.tag) %>
                 <% end %>
               </span>
             </li>
