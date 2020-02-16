@@ -2,11 +2,21 @@
 
 <div class="top">
   <header class="top__header">
-    <div class="top__header__logo">
+    <div class="top__header--logo">
       <section>
-        <%= image_tag 'book_logo.png' %>
+        <%= image_tag 'book_logo.png', class:"img" %>
 
-          <%= render "layouts/flash" %>
+        <%= render "layouts/flash" %>
+
+        <div class="slider">
+          <% @book_tags.each do |book| %>
+            <span class="chip content">
+              <% book.tags.each do |t| %>
+                <%= link_to t.tag, tag_path(t.tag) %>
+              <% end %>
+            </span>
+          <% end %>
+        </div>
 
       </section>
     </div>
