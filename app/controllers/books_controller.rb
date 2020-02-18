@@ -2,8 +2,8 @@ class BooksController < ApplicationController
   include Pagy::Backend
   
   def index
-    @pagy, @books = pagy(Book.all)
-    @tags = Tag.group(:tag).pluck(:book_id)
+    @pagy, @books = pagy(Book.all.includes(:user))
+    @tags = Tag.includes(:book).group(:tag).pluck(:book_id)
     @book_tags = Book.find(@tags)
   end
 
