@@ -1,5 +1,7 @@
+<!-- サイドのヘッダー -->
 <%= render "left_header" %>
 
+<!-- 投稿した詳細画面 -->
 <div class="top__main">
   <section class="top__main--section">
     <h2 class="top__main--title">Read Book(詳細)</h2>
@@ -53,7 +55,7 @@
         </div>
       </div>
 
-<!-- コメント -->
+  <!-- コメント -->
   <div class="comment__posts">
     <% if current_user %>
       <%= form_for [@book, @comment], id: "new_comment" do |form| %>
