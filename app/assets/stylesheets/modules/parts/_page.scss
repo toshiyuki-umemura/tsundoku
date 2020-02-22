@@ -1,0 +1,46 @@
+#flipbook {
+  margin-top: 2%;
+  left: 11.5rem;
+}
+
+.odd, .even {
+  background-color: rgba(247, 244, 244, 0.87);color:#fff;
+  padding-top: 0.55rem;
+}
+
+.page-wrapper {
+  box-shadow: 5px 5px 10px -2px #555,
+  5px 5px 8px rgba(255,255,255,0.8) inset;
+}
+
+.book__title {
+  background: image-url("book_title.jpg") no-repeat center center;
+  background-size: cover;
+  width: 70rem;
+  height: 40rem;
+}
+
+.page-turn-over {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 0.8rem;
+  line-height: 2em;
+  color: #fff;
+  border-radius: 5px;
+  background: #C0C0C0;
+}
+.page-turn-over:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 95%;
+  border: 15px solid transparent;
+  border-top: 15px solid #C0C0C0;
+  margin-left: -15px;
+  transform: rotateZ(90deg);
+}
+.book__title:hover .page-turn-over{
+  display: inline-block;
+  top: 200px;
+}
