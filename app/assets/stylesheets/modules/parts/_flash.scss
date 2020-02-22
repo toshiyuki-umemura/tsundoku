@@ -4,10 +4,10 @@
   padding: 8px 15px;
   background: #def3ff;
   border-radius: 20px;
+  text-align: center;
 
   &:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f111";
     position: absolute;
     font-size: 15px;
     left: -40px;
@@ -16,10 +16,10 @@
 
   &:after {
     font-family: "Font Awesome 5 Free";
-    content: "\f111";
     position: absolute;
     font-size: 23px;
     left: -23px;
     color: #def3ff;
+    text-align: center;
   }
 }
