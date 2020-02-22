@@ -12,19 +12,23 @@
     </div>
 </div>
 
+<!-- ヘッダー -->
 <%= render "header" %>
 
+  <!-- 投稿要素ヘッダー -->
   <div class="top__main">
     <section class="top__main--section">
-      <h2 class="top__main--title">Read Books</h2>
-      <h3 class="top__main--detail">積読とは</h3>
+      <h5 class="top__main--title"></h5>
+      <h3 class="top__main--detail">Read Books</h3>
 
+        <!-- 投稿要素詳細 -->
         <%= render "index" %>
 
       <%== pagy_nav(@pagy) %>
     </section>
   </div>
 
+  <!-- フッダー -->
   <footer class="top__footer">
   <small class="top__footer__copyright">Copyright&copy; <a href="index.html">T.U.</a></small>
   <p class="top__footer__jump"><a href="#">🔝</a></p>
