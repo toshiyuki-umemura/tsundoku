@@ -1,0 +1,54 @@
+.sign-edit {
+  display: block;
+  padding: 44px 0;
+  margin: 0 auto;
+  max-width: 600px;
+
+  &__title {
+    border-bottom: .05rem solid $light-grey-e;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 16px;
+    text-align: center;
+
+    &--delete {
+      border-bottom: .05rem solid $light-grey-e;
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &__contents {
+    &__field {
+      &__actions {
+        text-align: center;
+  
+        & input {
+          background-color: #3366CC;
+          color: $white;
+          cursor: pointer;
+          font-weight: normal;
+          margin-top: 30px;
+          padding: 14px 0 15px;
+          width: 60%;
+          border-radius: 10px;
+          letter-spacing: 3px;
+      
+          &:active {
+            background-color: $middle-grey;
+            outline-width: 0;
+            transition: all ease-out .3s;
+          }
+        }
+      }
+    }
+  }
+
+  .alert-danger {
+    color: red;
+  }
+}
