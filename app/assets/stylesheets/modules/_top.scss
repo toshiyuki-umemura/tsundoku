@@ -19,7 +19,7 @@
 				100% {opacity: 1;}
 			}
 
-			&--list1, &--list2, &--list3, &--list4 {
+			&--list1, &--list2, &--list3, &--list4, &--list5 {
 				animation-name: menu;
 				animation-duration: 5S;
 				animation-fill-mode: both;
@@ -45,7 +45,7 @@
 				width: 12%;
 				animation-delay: 0.4s;
 			}
-	
+
 			&--list4 {
 				left: 11%;
 				top: 60%;
@@ -53,29 +53,41 @@
 				animation-delay: 0.6s;
 			}
 
-			&--figure1, &--figure2, &--figure3, &--figure4 {
+			&--list5 {
+				left: 5.5%;
+				top: 76%;
+				width: 9%;
+				animation-delay: 0.8s;
+			}
+
+			&--figure1, &--figure2, &--figure3, &--figure4, &--figure5 {
 				position: fixed;
 				z-index: 1;
 			}
 
 			&--figure1 {
 				left: 12%;
-				top: 120px;
+				top: 8rem;
 			}
 
 			&--figure2 {
 				left: 19%;
-				top: 330px;
+				top: 22rem;
 			}
 
 			&--figure3 {
 				left: 8%;
-				top: 430px;
+				top: 29rem;
 			}
 
 			&--figure4 {
 				left: 14.5%;
-				top: 590px;
+				top: 39.5rem;
+			}
+
+			&--figure5 {
+				left: 7%;
+				top: 47.5rem;
 			}
 
 			&--link {
@@ -125,7 +137,7 @@
 				padding: 10px 10px 0;
 
 				& span {
-					font-size: 20px;
+					font-size: 1.2rem;
 				}
 
 				&__header {
@@ -142,13 +154,10 @@
 
 							&--li {
 								display: inline-block;
-								margin-left: 10px;
-								margin-right: 50px;
-								vertical-align: text-top;
 							}
 						
 							&--li2 {
-								width: 125px;
+								width: 7rem;
 								display: inline-block;
 								list-style-type: none;
 								position: relative;
@@ -184,11 +193,11 @@
 								background: image-url("bg1.jpg") repeat center top/12%;
 					
 								&--li {
-									width: 125px;
+									width: 7rem;
 									border-top: 1px inset white;
 					
 									& a {
-										font-size: 14px;
+										font-size: 1rem;
 										line-height: 35px;
 										text-align: middle;
 										font-weight: normal;
