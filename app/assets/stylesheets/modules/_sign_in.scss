@@ -3,7 +3,7 @@
   text-align: center;
   padding-top: 44px;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 600px;
 
   &__title {
     border-bottom: .05rem solid $light-grey-e;
@@ -18,10 +18,11 @@
   &__contents {
     display: block;
     margin: 0 auto;
-    max-width: 343px;
+    max-width: 500px;
     padding: 10px 40px 0;
 
     &__field {
+      text-align: left;
       margin-top: 20px;
       font-weight: 600;
       z-index: 1;
@@ -66,7 +67,10 @@
         }
       }
     }
+  }
 
-
+  #flash_alert {
+    color: red;
+    text-align: left;
   }
 }
