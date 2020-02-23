@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :books
   has_many :comments
+
+  validates :name,     presence: true
+  validates :nickname, presence: true, uniqueness: true
 end
