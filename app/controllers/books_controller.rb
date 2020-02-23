@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :redirect_root, only: [:new, :edit]
   include Pagy::Backend
   
   def index
@@ -63,6 +64,10 @@ class BooksController < ApplicationController
   private
   def book_params
     params.require(:book).permit( :title, :content, tags_attributes: [:id, :book_id, :tag])
+  end
+
+  def redirect_root
+    redirect_to root_path unless user_signed_in?
   end
 
 end
