@@ -1,0 +1,9 @@
+<% if @book.errors.any? %>
+  <div class="alert-warning">
+    <ul>
+      <% @book.errors.full_messages_for(:content).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

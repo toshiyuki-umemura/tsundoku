@@ -4,6 +4,10 @@
 <!-- 投稿した詳細画面 -->
 <div class="top__main">
   <section class="top__main--section">
+
+  <!-- フラッシュ -->
+  <%= render "layouts/flash" %>
+
     <h2 class="top__main--title">Read Book(詳細)</h2>
 
       <div class="top__main__contents">
@@ -25,18 +29,17 @@
                   </li>
 
                   <li class="top__main__contents__glid__header__others__ul--li2">
-                    <i class="fas fa-angle-down"></i>
-                      <ul class="top__main__contents__glid__header__others__ul--ul">
-                        <li class="top__main__contents__glid__header__others__ul--ul--li">
-                          <span><%= link_to "編集", "/books/#{@book.id}/edit" %></span>
-                        </li>
-                        <li class="top__main__contents__glid__header__others__ul--ul--li">
-                          <span><%= link_to "詳細", "/users/#{current_user.id}" %></span>
-                        </li>
-                        <li class="top__main__contents__glid__header__others__ul--ul--li">
-                          <span><%= link_to '削除', "/books/#{@book.id}", method: :delete %></span>
-                        </li>
-                      </ul>
+                    <% if user_signed_in? && current_user.id == @book.user_id %>
+                      <i class="fas fa-angle-down"></i>
+                        <ul class="top__main__contents__glid__header__others__ul--ul">
+                          <li class="top__main__contents__glid__header__others__ul--ul--li">
+                            <span><%= link_to "編集", "/books/#{@book.id}/edit" %></span>
+                          </li>
+                          <li class="top__main__contents__glid__header__others__ul--ul--li">
+                            <span><%= link_to '削除', "/books/#{@book.id}", method: :delete %></span>
+                          </li>
+                        </ul>
+                    <% end %>
                   </li>
                 </ul>
 
@@ -44,20 +47,26 @@
           </div>
 
           <div class="top__main__contents__glid__text">
-            <div class="top__main__contents__glid__text--content"><span>内容： </span><%= @book.content %></div>
+            <div class="top__main__contents__glid__text--content">
+              <span>内容： </span><%= @book.content %>
+            </div>
           </div>
 
           <div class="top__main__contents__glid__footer">
-            <div class="top__main__contents__glid__footer--time"><span>投稿日時： </span><%= @book.created_at.strftime("%Y/%m/%d %H:%M") %></div>
-            <div class="top__main__contents__glid__footer--name"><span>名前： </span><%= @book.user.nickname %></div>
+            <div class="top__main__contents__glid__footer--time">
+              <span>投稿日時： </span><%= @book.created_at.strftime("%Y/%m/%d %H:%M") %>
+            </div>
+            <div class="top__main__contents__glid__footer--name">
+              <span>名前： </span><%= @book.user.nickname %>
+            </div>
           </div>
 
         </div>
       </div>
 
   <!-- コメント -->
-  <div class="comment__posts">
-    <% if current_user %>
+  <% if current_user %>
+    <div class="comment__posts">
       <%= form_for [@book, @comment], id: "new_comment" do |form| %>
         <div class="comment__posts__field">
           <%= form.label :content, "コメント" %>
@@ -67,19 +76,23 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
     <div class="comment__list">
       <h6 class="comment__list--header">＜コメント一覧＞</h6>
       <% if @comments %>
         <% @comments.each do |comment| %>
           <div class="comment__list__element">
-            <strong class="comment__list__element--nickname"><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <strong class="comment__list__element--nickname">
+              <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：
+            </strong>
             <span class="comment__list__element--comment"><%= comment.content %></span>
-            <% if current_user.id == comment.user_id %>
-              <p class="comment__list__element--link"><%=link_to "削除", book_comment_path(comment.book.id, comment.id), method: :delete %></p>
-            <% end %>
+              <% if user_signed_in? && current_user.id == comment.user_id %>
+                <p class="comment__list__element--link">
+                  <%=link_to "削除", book_comment_path(comment.book.id, comment.id), method: :delete %>
+                </p>
+              <% end %>
           </div>
         <% end %>
       <% end %>

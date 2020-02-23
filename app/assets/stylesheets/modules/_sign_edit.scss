@@ -1,7 +1,6 @@
-.signin {
+.sign-edit {
   display: block;
-  text-align: center;
-  padding-top: 44px;
+  padding: 44px 0;
   margin: 0 auto;
   max-width: 600px;
 
@@ -13,41 +12,21 @@
     line-height: 1.5;
     padding: 16px;
     text-align: center;
+
+    &--delete {
+      border-bottom: .05rem solid $light-grey-e;
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 
   &__contents {
-    display: block;
-    margin: 0 auto;
-    max-width: 500px;
-    padding: 10px 40px 0;
-
     &__field {
-      text-align: left;
-      margin-top: 20px;
-      font-weight: 600;
-      z-index: 1;
-
-      & input {
-        outline-width: 2px;
-        background: $white;
-        border: 2px solid $grey;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: 100;
-        height: 28px;
-        line-height: 1.5;
-        margin-top: 8px;
-        padding: 10px 16px 8px;
-        width: 70%;
-      }
-
-      &__check {
-        text-align: left;
-        padding: 0 40px;
-        margin-top: 10px;
-      }
-
       &__actions {
+        text-align: center;
+  
         & input {
           background-color: #3366CC;
           color: $white;
@@ -69,8 +48,7 @@
     }
   }
 
-  #flash_alert {
+  .alert-danger {
     color: red;
-    text-align: left;
   }
 }

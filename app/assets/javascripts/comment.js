@@ -32,7 +32,8 @@ $(function(){
       $('.comment__posts__submit--button').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('投稿できませんでした');
+      location.reload();
     })
   })
 });
