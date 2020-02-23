@@ -47,6 +47,15 @@
             <%= image_tag 'toukou.png', class: "top__header__menu--img" %>
           </li>
 
+          <% unless user_signed_in? %>
+            <li class="top__header__menu--list5">
+              <span class="top__header__menu--figure5">
+                <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "top__header__menu--link" %>
+              </span>
+              <%= image_tag 'guest.png', class: "top__header__menu--img" %>
+            </li>
+          <% end %>
+
         </ul>
       </div>
   </header>
