@@ -12,9 +12,15 @@
 
           <li class="top__header__menu--list2">
             <% if user_signed_in? %>
-              <span class="top__header__menu--figure2">
-                <%= link_to "マイページ", "/users/#{current_user.id}", class: "top__header__menu--link" %>
-              </span>
+              <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
+                <span class="top__header__menu--figure2">
+                  <%= link_to "ユーザー編集", "/users/edit", class: "top__header__menu--link" %>
+                </span>
+              <% else %>
+                <span class="top__header__menu--figure2">
+                  <%= link_to "マイページ", "/users/#{current_user.id}", class: "top__header__menu--link" %>
+                </span>
+              <% end %>
             <% else %>
               <span class="top__header__menu--figure2">
                 <%= link_to "新規登録", new_user_registration_path, class: "top__header__menu--link" %>
