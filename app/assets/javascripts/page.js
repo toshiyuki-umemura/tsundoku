@@ -7,7 +7,7 @@ if (windowWidth >= windowMaxNextSize) {
   $(function(){
     $("#flipbook").turn({
       width: 700,
-      height: 455,
+      height: 460,
       elevation: 50,
       gradients: true,
       autoCenter: true,
