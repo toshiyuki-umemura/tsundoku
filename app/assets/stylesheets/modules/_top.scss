@@ -3,7 +3,7 @@
 
 		&--logo {
 			overflow: hidden;
-			padding: 10px 7% 0 30%;
+			padding: 10px 7% 0 31%;
 			text-align:center;
 		}
 
@@ -35,7 +35,7 @@
 			&--list2 {
 				left: 15%;
 				top: 27%;
-				width: 12%;	
+				width: 12%;
 				animation-delay: 0.2s;
 			}
 	
@@ -102,7 +102,7 @@
 		background: image-url("bg1.jpg")repeat center top/ 12%;
 
 		&--title:before {
-				content: "＊ ＊";
+				content: "＊  ＊";
 				display: block;
 				font-size: -webkit-xxx-large;
 				text-shadow: 20px 10px 0px rgba(255,255,255,0.5);
@@ -254,4 +254,19 @@
 			font-size: 40px;
 		}
 	}
+}
+
+// レスポンシブ
+@media screen and (max-width: 768px) {
+  .top {
+		&__main {
+			padding: 0 0 15px;
+		}
+
+		&__display-none {
+			display: none;
+		}
+
+		// ハンバーガーメニュー実装予定
+  }
 }
