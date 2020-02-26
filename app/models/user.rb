@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    user = find_or_create_by!(name: "test", nickname: "guest_user", email: 'guest_user@examaple.com') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end
