@@ -1,7 +1,7 @@
 // タグのスライダー
 $(document).ready(function(){
   
-  if ($(window).width() > 650) {
+  if ($(window).width() > 900) {
     $('.slider').bxSlider({
       auto: true,
       pause:	5000,
