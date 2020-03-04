@@ -74,3 +74,24 @@
     text-align: left;
   }
 }
+
+
+@media screen and (max-width: 1250px) {
+  .signin {
+    margin-left: 331px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .signin {
+    max-width: 500px;
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .signin {
+    max-width: 400px;
+    margin-left: 120px;
+  }
+}
