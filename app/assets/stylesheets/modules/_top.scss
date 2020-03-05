@@ -102,15 +102,20 @@
 		padding: 0 4% 50px 30%;
 		background: image-url("bg1.jpg")repeat center top/ 12%;
 
-		&--title:before {
-				content: "＊  ＊";
-				display: block;
-				font-size: -webkit-xxx-large;
-				text-shadow: 20px 10px 0px rgba(255,255,255,0.5);
-				text-align: center;
-				position: relative;
-    		left: -1.3rem;
-			}
+		&--title {
+			font-size: 2.2rem;
+			margin-top: 3rem;
+
+			&:before {
+					content: "＊  ＊";
+					display: block;
+					font-size: -webkit-xxx-large;
+					text-shadow: 20px 10px 0px rgba(255,255,255,0.5);
+					text-align: center;
+					position: relative;
+					left: -1.3rem;
+				}
+		}
 		
 
 		&--detail {
@@ -271,7 +276,7 @@
 }
 
 // レスポンシブ
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1200px) {
 	.top {
 		&__header {
 			&__menu {
@@ -422,7 +427,7 @@
 		width: 170px;
 		height: 100%;
 		background-color: white;
-		opacity: .5;
+		opacity: .8;
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
 		transition: transform .4s;
