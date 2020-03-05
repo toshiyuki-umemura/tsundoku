@@ -5,25 +5,26 @@
 <div class="top">
   <header class="top__header">
     <div class="top__header--logo">
+
       <section>
 
         <!-- フラッシュ -->
         <%= render "layouts/flash" %>
 
         <!-- 本をめくる -->
-        <div id="flipbook">
-          <% (1..100).each do |i| %>
-            <% if i == 1 %>
-              <span class="book__title"><span class="page-turn-over">ページをめくってね！</span></span>
-            <% elsif i == 100 %>
-              <%= image_tag 'book_back.jpg' %>
-            <% else %>
-              <div>
-                <img src="<%= "https://picsum.photos/460/582?grayscale&/?random/image=" + "#{i}" %>">
-              </div>
+          <div id="flipbook">
+            <% (1..100).each do |i| %>
+              <% if i == 1 %>
+                <span class="book__title"><span class="page-turn-over">ページをめくってね！</span></span>
+              <% elsif i == 100 %>
+                <%= image_tag 'book_back.jpg' %>
+              <% else %>
+                <div>
+                  <img src="<%= "https://picsum.photos/460/582?grayscale&/?random/image=" + "#{i}" %>">
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
 
           <!-- スライダーでタグ一覧を表示 -->
           <div class="slider-head">＜タグ一覧＞</div>

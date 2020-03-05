@@ -1,7 +1,6 @@
 <!-- サイドのヘッダー -->
-
 <div class="top">
-  <header class="top__header top__display-none">
+  <header class="top__header">
       <div class="top__header__menu">
         <ul class="top__header__menu--ul">
 
@@ -13,7 +12,7 @@
           <li class="top__header__menu--list2">
             <% if user_signed_in? %>
               <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
-                <span class="top__header__menu--figure2">
+                <span class="top__header__menu--figure2 edit__user">
                   <%= link_to "ユーザー編集", "/users/edit", class: "top__header__menu--link" %>
                 </span>
               <% else %>
@@ -59,4 +58,52 @@
         </ul>
       </div>
   </header>
+</div>
+
+
+<!-- サイドのハンバーガーメニュー ヘッダー -->
+<div class="ham-content">
+  <input type="checkbox" id="togglenav">
+  <label for="togglenav" class="togglenav-btn"></label>
+  <label for="togglenav" class="togglenav-bg"></label>
+
+  <nav class="drawer">
+    <ul class="drawer__menu">
+
+      <li class="drawer__menu--item">
+        <%= link_to "積読スッキリ!!", "/" %>
+      </li>
+
+      <li class="drawer__menu--item">
+        <% if user_signed_in? %>
+          <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
+              <%= link_to "ユーザー編集", "/users/edit" %>
+          <% else %>
+              <%= link_to "マイページ", "/users/#{current_user.id}" %>
+          <% end %>
+        <% else %>
+            <%= link_to "新規登録", new_user_registration_path %>
+        <% end %>
+      </li>
+
+      <li class="drawer__menu--item">
+        <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+      </li>
+
+      <li class="drawer__menu--item">
+        <%= link_to "投稿する", new_book_path %>
+      </li>
+
+      <% unless user_signed_in? %>
+        <li class="drawer__menu--item">
+          <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %>
+        </li>
+      <% end %>
+
+    </ul>
+  </nav>
 </div>

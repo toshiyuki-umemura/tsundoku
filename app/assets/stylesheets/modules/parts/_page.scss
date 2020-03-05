@@ -46,27 +46,27 @@
   top: 200px;
 }
 
-// 要修正箇所
-@media screen and (max-width: 1600px) { #flipbook { left: 14.5%;}}
-@media screen and (max-width: 1500px) { #flipbook { left: 12.5%;}}
-@media screen and (max-width: 1450px) { #flipbook { left: 11.5%;}}
-@media screen and (max-width: 1400px) { #flipbook { left: 10.5%;}}
-@media screen and (max-width: 1350px) { #flipbook { left: 9.0%;}}
-@media screen and (max-width: 1300px) { #flipbook { left: 7.0%;}}
-@media screen and (max-width: 1250px) { #flipbook { left: 5.5%;}}
-@media screen and (max-width: 1200px) { #flipbook { left: 3.5%;}}
-@media screen and (max-width: 1150px) { #flipbook { left: 1.5%;}}
-@media screen and (max-width: 1100px) { #flipbook { left: -1.5%;}}
-@media screen and (max-width: 1050px) { #flipbook { left: -3.5%;}}
-@media screen and (max-width: 1000px) { #flipbook { left: -1.5%;}}
-@media screen and (max-width: 999px) { #flipbook { left: 8.5%;}}
-@media screen and (max-width: 900px) { #flipbook { left: 5.5%;}}
-@media screen and (max-width: 850px) { #flipbook { left: 3.5%;}}
-@media screen and (max-width: 800px) { #flipbook { left: -1.5%;}}
-@media screen and (max-width: 750px) { #flipbook { left: -4.5%;}}
-@media screen and (max-width: 700px) { #flipbook { left: -6.5%;}}
-@media screen and (max-width: 699px) { #flipbook { left: 15.5%;}}
-@media screen and (max-width: 650px) { #flipbook { left: 12.5%;}}
-@media screen and (max-width: 600px) { #flipbook { left: 9.5%;}}
-@media screen and (max-width: 550px) { #flipbook { left: 6.5%;}}
-@media screen and (max-width: 500px) { #flipbook { left: 3%;}}
+  // レスポンシブ
+  @media screen and (max-width: 1600px) { #flipbook { left: 14.5%;}}
+  @media screen and (max-width: 1500px) { #flipbook { left: 12.5%;}}
+  @media screen and (max-width: 1450px) { #flipbook { left: 11.5%;}}
+  @media screen and (max-width: 1400px) { #flipbook { left: 10.5%;}}
+  @media screen and (max-width: 1350px) { #flipbook { left: 9.0%;}}
+  @media screen and (max-width: 1300px) { #flipbook { left: 7.0%;}}
+  @media screen and (max-width: 1250px) { #flipbook { left: 5.5%;}}
+  @media screen and (max-width: 1200px) { #flipbook { left: 3.5%;}}
+  @media screen and (max-width: 1150px) { #flipbook { left: 1.5%;}}
+  @media screen and (max-width: 1100px) { #flipbook { left: -1.5%;}}
+  @media screen and (max-width: 1050px) { #flipbook { left: -3.5%;}}
+  @media screen and (max-width: 1000px) { #flipbook { left: -1.5%;}}
+  @media screen and (max-width: 999px) { #flipbook { left: 8.5%;}}
+  @media screen and (max-width: 900px) { #flipbook { left: 5.5%;}}
+  @media screen and (max-width: 850px) { #flipbook { left: 3.5%;}}
+  @media screen and (max-width: 800px) { #flipbook { left: -1.5%;}}
+  @media screen and (max-width: 750px) { #flipbook { left: -4.5%;}}
+  @media screen and (max-width: 700px) { #flipbook { left: -6.5%;}}
+  @media screen and (max-width: 699px) { #flipbook { left: 15.5%;}}
+  @media screen and (max-width: 650px) { #flipbook { left: 12.5%;}}
+  @media screen and (max-width: 600px) { #flipbook { left: 9.5%;}}
+  @media screen and (max-width: 550px) { #flipbook { left: 6.5%;}}
+  @media screen and (max-width: 500px) { #flipbook { left: 3%;}}
