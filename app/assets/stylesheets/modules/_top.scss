@@ -72,7 +72,7 @@
 			}
 
 			&--figure2 {
-				left: 220px;
+				left: 215px;
 				top: 280px;
 			}
 
@@ -266,6 +266,10 @@
 }
 
 
+.ham-content {
+	display: none;
+}
+
 // レスポンシブ
 @media screen and (max-width: 1050px) {
 	.top {
@@ -351,66 +355,90 @@
 
 			&__header {
 				&__menu {
-	
-					&--list1, &--list2, &--list3, &--list4, &--list5 {
-						left: 10px;
-						width: 120px;
-						position: absolute;
-					}
-
-					&--list1 {
-						top: -50px;
-					}
-			
-					&--list2 {
-						top: 40px;
-						animation-delay: 0.2s;
-					}
-			
-					&--list3 {
-						top: 130px;
-						animation-delay: 0.4s;
-					}
-		
-					&--list4 {
-						top: 220px;
-						animation-delay: 0.6s;
-					}
-		
-					&--list5 {
-						top: 310px;
-						animation-delay: 0.8s;
-					}
-
-					&--figure1, &--figure2, &--figure3, &--figure4, &--figure5 {
-						position: relative;
-					}
-
-					&--figure1 {
-						left: 16px;
-						top: 76px;
-					}
-		
-					&--figure2 {
-						left: 32px;
-						top: 78px;
-					}
-		
-					&--figure3 {
-						left: 31px;
-						top: 78px;
-					}
-		
-					&--figure4 {
-						left: 35px;
-						top: 80px;
-					}
-		
-					&--figure5 {
-						left: 12px;
-						top: 78px;
-					}
+					display: none;
 				}
 			}
-  }
+	}
+	
+	.ham-content {
+		display: contents;
+	}
+
+	#togglenav {
+		display: none;
+	}
+
+	.togglenav-btn:before {
+		font-family: 'Font Awesome 5 Free';
+		content: "\f0c9";
+		font-weight: 900;
+		font-size: 2em;
+	}
+
+	#togglenav:checked {
+		font-family: 'Font Awesome 5 Free';
+		content: "\f00d";
+		font-weight: 900;
+		font-size: 2em;
+	}
+
+	#togglenav:checked ~ .drawer {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	.togglenav-btn {
+		border-radius: 50%;
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 2;
+		width: 50px;
+		height: 50px;
+		color: #fff;
+		background-color: #899D9B;
+		line-height: 50px;
+		text-align: center;
+	}
+
+	.togglenav-bg {
+		cursor: pointer;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		pointer-events: none;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		transition: background-color .6s;
+	}
+
+	.drawer {
+		z-index: 1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 170px;
+		height: 100%;
+		background-color: white;
+		opacity: .5;
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+		transition: transform .4s;
+
+		&__menu {
+			&--item {
+				& a {
+					padding: 0em 2em 0 2.5em;
+					cursor: pointer;
+					color: #333;
+				}
+		
+				&:nth-child(1) {
+					padding-top: 5em;
+				}
+			}
+		}
+	}
 }
