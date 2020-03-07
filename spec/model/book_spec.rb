@@ -7,5 +7,11 @@ describe Book do
       book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
       expect(book).to be_valid
     end
+
+    it "titleが空では登録できないこと" do
+      book = build(:book, title: nil)
+      book.valid?
+      expect(book.errors[:title]).to include("を入力してください")
+    end
   end
 end
