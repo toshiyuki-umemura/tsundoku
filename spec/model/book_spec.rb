@@ -13,5 +13,11 @@ describe Book do
       book.valid?
       expect(book.errors[:title]).to include("を入力してください")
     end
+
+    it "contentが空では登録できないこと" do
+      book = build(:book, content: nil)
+      book.valid?
+      expect(book.errors[:content]).to include("を入力してください")
+    end
   end
 end
