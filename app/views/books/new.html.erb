@@ -13,7 +13,7 @@
         <%= form_for(@book) do |form| %>
 
           <div class="new__container__contents__field">
-            <%= form.label :title, "タイトル" %><em>(<%= @book.errors.count %>文字まで)</em>
+            <%= form.label :title, "タイトル" %><em>(30文字まで)</em>
             <%= form.text_field :title %>
           </div>
 
