@@ -28,5 +28,11 @@ describe Book do
       book.valid?
       expect(book.errors[:title]).to include("は30文字以内で入力してください")
     end
+
+    it "titleが30文字以下では登録できること" do
+      title = 'a' * 30
+      book = user.books.build(title: title, content: "aiueo", user_id: 1)
+      expect(book).to be_valid
+    end
   end
 end
