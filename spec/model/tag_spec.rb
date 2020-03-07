@@ -23,5 +23,12 @@ describe Book do
       tag = book.tags.build(tag: tag_count, book_id: 1)
       expect(tag).to be_valid
     end
+
+    it "tagが10文字を超えると登録できないこと" do
+      tag_count = 'a' * 11
+      tag = build(:tag, tag: tag_count, book_id: 1)
+      tag.valid?
+      expect(tag.errors[:tag]).to include("は10文字以内で入力してください")
+    end
   end
 end
