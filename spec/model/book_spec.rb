@@ -34,5 +34,12 @@ describe Book do
       book = user.books.build(title: title, content: "aiueo", user_id: 1)
       expect(book).to be_valid
     end
+
+    it "contentが250文字を超えると登録できないこと" do
+      content = 'a' * 251
+      book = build(:book, content: content)
+      book.valid?
+      expect(book.errors[:content]).to include("は250文字以内で入力してください")
+    end
   end
 end
