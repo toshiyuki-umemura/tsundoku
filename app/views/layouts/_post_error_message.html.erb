@@ -1,0 +1,29 @@
+<% if @book.errors.any? %>
+  <div class="alert-warning">
+    <ul>
+      <% @book.errors.full_messages_for(:title).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @book.errors.any? %>
+  <div class="alert-warning">
+    <ul>
+      <% @book.errors.full_messages_for(:content).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @book.errors.any? %>
+  <div class="alert-warning">
+    <ul>
+      <% @book.errors.full_messages_for(:"tags.tag").each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

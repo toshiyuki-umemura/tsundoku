@@ -30,6 +30,18 @@ describe User do
       user.valid?
       expect(user.errors[:password]).to include("が入力されていません。")
     end
+
+    it "passwordが存在してもpassword_confirmationが空では登録できないこと" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
+    end
+
+    it "nicknameが8文字を超えると登録できないこと" do
+      user = build(:user, nickname: "nicknamea")
+      user.valid?
+      expect(user.errors[:nickname]).to include("は8文字以内で入力してください")
+    end
     
   end
 end
