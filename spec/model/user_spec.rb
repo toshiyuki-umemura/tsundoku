@@ -12,6 +12,12 @@ describe User do
       user.valid?
       expect(user.errors[:name]).to include("を入力してください")
     end
+
+    it "nicknameが空では登録できないこと" do
+      user = build(:user, nickname: nil)
+      user.valid?
+      expect(user.errors[:nickname]).to include("を入力してください")
+    end
     
   end
 end
