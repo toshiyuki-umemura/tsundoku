@@ -10,5 +10,11 @@ describe Book do
       tag = book.tags.build(tag: "aiueo", book_id: 1)
       expect(tag).to be_valid
     end
+
+    it "tagがなければ登録できないこと" do
+      tag = build(:tag, tag: "", book_id: 1)
+      tag.valid?
+      expect(tag.errors[:tag]).to include("を入力してください")
+    end
   end
 end
