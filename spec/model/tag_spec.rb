@@ -16,5 +16,12 @@ describe Book do
       tag.valid?
       expect(tag.errors[:tag]).to include("を入力してください")
     end
+
+    it "tagが10文字以下であれば登録できること" do
+      tag_count = 'a' * 10
+      book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
+      tag = book.tags.build(tag: tag_count, book_id: 1)
+      expect(tag).to be_valid
+    end
   end
 end
