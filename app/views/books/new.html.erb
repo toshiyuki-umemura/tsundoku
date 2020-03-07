@@ -13,18 +13,19 @@
         <%= form_for(@book) do |form| %>
 
           <div class="new__container__contents__field">
-            <%= form.label :title, "タイトル" %>
+            <%= form.label :title, "タイトル" %><em>(<%= @book.errors.count %>文字まで)</em>
             <%= form.text_field :title %>
           </div>
 
           <div class="new__container__contents__field--content">
-            <%= form.label :content, "内容" %>
-            <p><%= form.text_area :content %></p>
+            <%= form.label :content, "内容" %><em>(250文字まで)</em>
+            <p><%= form.text_area :content, id: "input-text" %></p>
+            <p id="counter", class="new__container__contents__field--count">現在の入力文字数：0文字</p>
           </div>
 
             <%= form.fields_for :tags do |tag__form| %>
                 <div class="new__container__contents__field">
-                  <%= tag__form.label :tag, "タグ" %>
+                  <%= tag__form.label :tag, "タグ" %><em>(10文字まで)</em>
                     <%= tag__form.text_field :tag %>
               </div>
             <% end %>
