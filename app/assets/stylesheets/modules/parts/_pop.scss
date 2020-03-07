@@ -64,3 +64,25 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  .containers {
+    &__neumo {
+      &__card {
+        width: 40%;
+        padding: 25px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containers {
+    &__neumo {
+      &__card {
+        width: 75%;
+      }
+    }
+  }
+}
