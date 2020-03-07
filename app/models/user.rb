@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :name,     presence: true
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 8 }
 
   def self.guest
     user = find_or_create_by!(name: "test", nickname: "guest_user", email: 'guest_user@examaple.com') do |user|
