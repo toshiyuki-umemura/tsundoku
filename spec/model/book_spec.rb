@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe Book do
   describe '#create' do
+
+    let(:user) { create(:user) }
+
     it "全項目（title、content、外部idのuser_id）が存在すれば登録できること" do
-      user = build(:user)
       book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
       expect(book).to be_valid
     end
@@ -18,6 +20,13 @@ describe Book do
       book = build(:book, content: nil)
       book.valid?
       expect(book.errors[:content]).to include("を入力してください")
+    end
+
+    it "titleが30文字を超えると登録できないこと" do
+      title = 'a' * 31
+      book = build(:book, title: title)
+      book.valid?
+      expect(book.errors[:title]).to include("は30文字以内で入力してください")
     end
   end
 end
