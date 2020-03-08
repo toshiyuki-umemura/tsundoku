@@ -6,7 +6,7 @@ describe Book do
     let(:user) { create(:user) }
 
     it "全項目（title、content、外部idのuser_id）が存在すれば登録できること" do
-      book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
+      book = user.books.build(title: "aiueo", content: "aiueo")
       expect(book).to be_valid
     end
 
@@ -31,7 +31,7 @@ describe Book do
 
     it "titleが30文字以下では登録できること" do
       title = 'a' * 30
-      book = user.books.build(title: title, content: "aiueo", user_id: 1)
+      book = user.books.build(title: title, content: "aiueo")
       expect(book).to be_valid
     end
 
@@ -44,7 +44,7 @@ describe Book do
 
     it "contentが250文字以下では登録できること" do
       title = 'a' * 250
-      book = user.books.build(title: "aiueo", content: title, user_id: 1)
+      book = user.books.build(title: "aiueo", content: title)
       expect(book).to be_valid
     end
   end
