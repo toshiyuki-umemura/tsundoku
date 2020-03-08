@@ -130,4 +130,22 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'DELETE #destroy' do
+    before do
+      login user
+    end
+
+    it 'deletes the book' do
+      expect do
+        delete :destroy, params: { id: book.id }
+      end.to change(Book, :count).by(0)
+    end
+  
+    it 'redirects the :create template' do
+      delete :destroy, params: { id: book.id }
+      expect(response).to redirect_to(root_path)
+    end
+  end
+
 end
