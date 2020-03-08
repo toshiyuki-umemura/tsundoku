@@ -40,4 +40,25 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'GET #index' do
+    before { get :index }
+
+    it "renders the :index template" do
+      expect(response).to render_template :index
+    end
+
+    it 'has a 200 status code' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns @books' do
+      expect(assigns(:books)).to match_array books
+    end
+
+    it "populates an array of books ordered by created_at DESC" do
+      expect(assigns(:books)).to match(books.sort{ |a, b| b.created_at <=> a.created_at } )
+    end
+  end
+
 end
