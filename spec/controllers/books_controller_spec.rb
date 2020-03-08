@@ -12,4 +12,16 @@ describe BooksController, type: :controller do
     end
   end
 
+  describe 'GET #edit' do
+    it "assigns the requested book to @book" do
+      get :edit, params: { id: book }
+      expect(assigns(:book)).to eq book
+    end
+
+    it "renders the :edit template" do
+      get :edit, params: { id: book }
+      expect(response).to render_template :edit
+    end
+  end
+
 end
