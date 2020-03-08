@@ -1,6 +1,6 @@
 FactoryBot.define do
 
   factory :tag do
-    tag {"aiueoaiueo"}
+    tag { Faker::Lorem.characters(number: 10) }
   end
 end
