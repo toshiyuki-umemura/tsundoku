@@ -24,4 +24,17 @@ describe BooksController, type: :controller do
     end
   end
 
+  describe 'GET #index' do
+    it "populates an array of books ordered by created_at DESC" do
+      books = create_list(:book, 3, user: user)
+      get :index
+      expect(assigns(:books)).to match(books.sort{ |a, b| b.created_at <=> a.created_at } )
+    end
+
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
+  end
+
 end
