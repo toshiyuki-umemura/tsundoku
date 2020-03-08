@@ -78,4 +78,24 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'POST #create' do
+    before do
+      login user
+    end
+
+    let(:book_attributes) { attributes_for(:book) }
+
+    it 'saves new book' do
+      expect do
+        post :create, params: { book: book_attributes }
+      end.to change(Book, :count).by(1)
+    end
+  
+    it 'redirects the :create template' do
+      post :create, params: { book: book_attributes }
+      expect(response).to redirect_to(root_path)
+    end
+  end
+
 end
