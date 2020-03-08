@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   include Pagy::Backend
   
   def index
-    @pagy, @books = pagy(Book.all.includes(:user))
+    @pagy, @books = pagy(Book.all.includes(:user).order("created_at DESC"))
     @tags = Tag.includes(:book).group(:tag).pluck(:book_id)
     @book_tags = Book.find(@tags)
   end
