@@ -28,6 +28,7 @@
       &__field {
         &--count {
           padding-bottom: 30px;
+          text-align: right;
         }
       }
 
@@ -55,6 +56,11 @@
     }
     .chips input.input {
       width: 320px !important;
+    }
+  }
+  &__letter {
+    &__limit {
+      margin-left: 10px;
     }
   }
 }
