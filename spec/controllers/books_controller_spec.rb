@@ -61,4 +61,21 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'GET #show' do
+    before { get :show, params: { id: book } }
+
+    it "renders the :show template" do
+      expect(response).to render_template :show
+    end
+
+    it 'has a 200 status code' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "assigns the requested book to @book" do
+      expect(assigns(:book)).to eq book
+    end
+  end
+
 end
