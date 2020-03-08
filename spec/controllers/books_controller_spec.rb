@@ -23,4 +23,21 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'GET #edit' do
+    before { get :edit, params: { id: book } }
+
+    it "renders the :edit template" do
+      expect(response).to render_template :edit
+    end
+
+    it 'has a 200 status code' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "assigns the requested book to @book" do
+      expect(assigns(:book)).to eq book
+    end
+  end
+
 end
