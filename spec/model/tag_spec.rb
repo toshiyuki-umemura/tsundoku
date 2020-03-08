@@ -6,8 +6,8 @@ describe Book do
     let(:user) { create(:user) }
 
     it "tagが存在すれば登録できること" do
-      book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
-      tag = book.tags.build(tag: "aiueo", book_id: 1)
+      book = user.books.build(title: "aiueo", content: "aiueo")
+      tag = book.tags.build(tag: "aiueo")
       expect(tag).to be_valid
     end
 
@@ -19,8 +19,8 @@ describe Book do
 
     it "tagが10文字以下であれば登録できること" do
       tag_count = 'a' * 10
-      book = user.books.build(title: "aiueo", content: "aiueo", user_id: 1)
-      tag = book.tags.build(tag: tag_count, book_id: 1)
+      book = user.books.build(title: "aiueo", content: "aiueo")
+      tag = book.tags.build(tag: tag_count)
       expect(tag).to be_valid
     end
 
