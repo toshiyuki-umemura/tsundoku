@@ -98,4 +98,36 @@ describe BooksController, type: :controller do
     end
   end
 
+
+  describe 'PATCH #update' do
+    before do
+      login user
+    end
+
+    let(:update_attributes) do
+      {
+          title: 'update title',
+          content: 'update content'
+      }
+    end
+  
+    it 'saves updated book' do
+      expect do
+        patch :update, params: { id: book.id, book: update_attributes }
+      end.to change(Book, :count).by(1)
+    end
+  
+    it 'updates updated book' do
+      patch :update, params: { id: book.id, book: update_attributes }
+      book.reload
+      expect(book.title).to eq update_attributes[:title]
+      expect(book.content).to eq update_attributes[:content]
+    end
+  
+    it 'redirects the :create template' do
+      patch :update, params: { id: book.id, book: update_attributes }
+      expect(response).to redirect_to(root_path)
+    end
+  end
+
 end
