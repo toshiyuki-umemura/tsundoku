@@ -4,11 +4,17 @@
   <h2 class="signin__title">ログイン</h2>
 
     <div class="signin__contents">
+
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
         <%- end -%>
+
+        <div class="signin__contents__twitter">
+          <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "signin__contents__twitter--button" %>
+        </div>
 
         <div class="signin__contents__field">
           <%= f.label :email, "メールアドレス", {class: 'signin__contents__field--label'} %><br />
