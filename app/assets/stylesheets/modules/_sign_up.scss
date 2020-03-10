@@ -29,6 +29,18 @@
       margin-bottom: 10px;
     }
 
+    &__twitter {
+      text-align: center;
+      margin-top: 20px;
+
+      &--button {
+      background: $cyan;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      }
+    }
+
     &__field {
       margin-top: 20px;
       font-weight: 600;
