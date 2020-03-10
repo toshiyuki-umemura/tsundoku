@@ -21,6 +21,18 @@
     max-width: 500px;
     padding: 10px 40px 0;
 
+    &__twitter {
+      text-align: center;
+      margin-top: 20px;
+
+      &--button {
+      background: $cyan;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      }
+    }
+
     &__field {
       text-align: left;
       margin-top: 20px;
