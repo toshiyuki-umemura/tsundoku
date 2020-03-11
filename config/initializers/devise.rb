@@ -260,14 +260,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  # config.omniauth :twitter, Rails.application.credentials.twitter[], Rails.application.credentials.twitter[:twitter_api_secret], display: 'popup'
-  Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"]
-  
-    OmniAuth.config.on_failure = Proc.new { |env|
-      OmniAuth::FailureEndpoint.new(env).redirect_to_failure
-    }
-  end
+  config.omniauth :twitter, Rails.application.credentials.twitter[], Rails.application.credentials.twitter[:twitter_api_secret], display: 'popup'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
