@@ -53,5 +53,3 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
-  twitter_api_key: <%= Rails.application.credentials.db[:twitter_api_key] %>
-  twitter_api_secret: <%= Rails.application.credentials.db[:twitter_api_secret] %>
