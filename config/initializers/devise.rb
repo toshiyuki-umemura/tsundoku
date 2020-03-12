@@ -260,10 +260,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, Rails.application.credentials.twitter[:twitter_api_key], Rails.application.credentials.twitter[:twitter_api_secret], display: 'popup'
+  # config.omniauth :twitter, Rails.application.credentials.twitter[:twitter_api_key], Rails.application.credentials.twitter[:twitter_api_secret], display: 'popup'
+  config.omniauth :twitter, Settings.twitter[:twitter_api_key], Settings.twitter[:twitter_api_secret], display: 'popup'
 
   # if Rails.env.development?
-  #   config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :twitter_api_key), Rails.application.credentials.dig(:twitter, :twitter_api_secret), callback_url: "http://localhost:3000/users/auth/twitter/callback"
+  #   config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :twitter_api_key), Rails.application.credentials.dig(:tw  itter, :twitter_api_secret), callback_url: "http://localhost:3000/users/auth/twitter/callback"
   # elsif Rails.env.production?
   #   config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :twitter_api_key), Rails.application.credentials.dig(:twitter, :twitter_api_secret), callback_url: "http://18.178.4.190/users/auth/twitter/callback"
   # else
