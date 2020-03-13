@@ -22,7 +22,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def after_sign_in_path_for(resource)
     if session[:user].id == nil
-      step1_signup_index_path
+      new_user_registration_path
     else
       root_path
     end
