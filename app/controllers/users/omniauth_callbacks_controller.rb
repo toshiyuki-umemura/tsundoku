@@ -15,16 +15,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect session[:user], event: :authentication
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
-      redirect_to root_path
+      redirect_to new_user_registration_path
     end
   end
 
-  def after_sign_in_path_for(resource)
-    if session[:user].id == nil
-      new_user_registration_path
-    else
-      root_path
-    end
-  end
+  # def after_sign_in_path_for(resource)
+  #   if session[:user].id == nil
+  #     new_user_registration_path
+  #   else
+  #     root_path
+  #   end
+  # end
 
 end
