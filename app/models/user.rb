@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 8 }
 
   def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
+    user = User.where(uid: auth.uid, provider: auth.provider, name: auth.info.name, nickname: auth.info.nickname).first
 
     unless user
       user = User.create(
