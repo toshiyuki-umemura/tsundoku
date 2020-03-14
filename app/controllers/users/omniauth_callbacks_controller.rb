@@ -11,6 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     session[:oauth] = request.env['omniauth.auth'].except('extra')
     session[:user] = User.find_for_oauth(request.env['omniauth.auth'])
+
     if session[:user]
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Twitter'
       sign_in_and_redirect session[:user], event: :authentication
