@@ -4,6 +4,6 @@ class Book < ApplicationRecord
   has_many :tags, dependent: :destroy
   accepts_nested_attributes_for :tags
 
-  validates :title,   presence: true
-  validates :content, presence: true
+  validates :title,   presence: true, length: { maximum: 30 }
+  validates :content, presence: true, length: { maximum: 250 }
 end

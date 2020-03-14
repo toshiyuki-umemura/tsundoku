@@ -19,7 +19,8 @@
           </div>
 
           <div class="signup__contents__field">
-            <%= f.label :nickname, "ニックネーム", {class: 'signup__contents__field--label'} %><br />
+            <%= f.label :nickname, "ニックネーム", {class: 'signup__contents__field--label'} %>
+            <em>(8文字まで)</em><br />
             <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
           </div>
 

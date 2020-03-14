@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :name,     presence: true
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 8 }
 
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

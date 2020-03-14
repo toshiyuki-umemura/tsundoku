@@ -16,7 +16,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_path
-  end
+    end
   end
 
   def after_sign_in_path_for(resource)

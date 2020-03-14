@@ -58,7 +58,15 @@
   @media screen and (max-width: 1150px) { #flipbook { left: 1.5%;}}
   @media screen and (max-width: 1100px) { #flipbook { left: -1.5%;}}
   @media screen and (max-width: 1050px) { #flipbook { left: -3.5%;}}
-  @media screen and (max-width: 1000px) { #flipbook { left: -1.5%;}}
+  @media screen and (max-width: 1000px) {
+     #flipbook {
+       left: -1.5%;
+
+       .page-turn-over {
+         padding: 7px;
+       }
+    }
+}
   @media screen and (max-width: 999px) { #flipbook { left: 8.5%;}}
   @media screen and (max-width: 900px) { #flipbook { left: 5.5%;}}
   @media screen and (max-width: 850px) { #flipbook { left: 3.5%;}}

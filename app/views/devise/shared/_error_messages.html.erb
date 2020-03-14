@@ -37,3 +37,13 @@
     </ul>
   </div>
 <% end %>
+
+<% if resource.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% resource.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
