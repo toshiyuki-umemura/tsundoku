@@ -9,13 +9,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def callback_from(provider)
     provider = provider.to_s
 
-    @user = User.find_for_oauth(request.env['omniauth.auth'])
+    session[:oauth] = request.env['omniauth.auth'].except('extra')
+    session[:user] = User.find_for_oauth(request.env['omniauth.auth'])
 
-    if @user.persisted?
-      sign_in_and_redirect @user
+    if session[:user]
+      sign_in_and_redirect session[:user], event: :authentication
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_path
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    if session[:user].id == nil
+      new_user_registration_path
+    else
+      root_path
     end
   end
 
