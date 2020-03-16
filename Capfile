@@ -10,5 +10,5 @@ require "capistrano/scm/git"
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 
 
-# require 'capistrano/git_copy'
-# install_plugin Capistrano::GitCopy::SCM
+require 'capistrano/git_copy'
+install_plugin Capistrano::GitCopy::SCM
