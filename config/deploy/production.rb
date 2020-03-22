@@ -1,11 +1,4 @@
-server '18.178.4.190',
-  user: 'ec2-user',
-  roles: %w{app db web},
-  ssh_options: {
-    port: 22,
-    keys: %w('~/.ssh/tsundoku.pem'),
-    forward_agent: true
-  }
+server '18.178.4.190', user: 'ec2-user', roles: %w{app db web}
 
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
