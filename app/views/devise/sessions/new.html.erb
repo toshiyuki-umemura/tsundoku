@@ -12,9 +12,9 @@
           <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
         <%- end -%>
 
-        <div class="signin__contents__twitter">
+        <%# <div class="signin__contents__twitter">
           <%= link_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, class: "signin__contents__twitter--button" %>
-        </div>
+        <%# </div> %>
 
         <div class="signin__contents__field">
           <%= f.label :email, "メールアドレス", {class: 'signin__contents__field--label'} %><br />
