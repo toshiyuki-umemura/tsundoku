@@ -1,3 +1,8 @@
+
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
+
 server '18.178.4.190',
   user: 'ec2-user',
   roles: %w{app db web},
@@ -5,9 +10,6 @@ server '18.178.4.190',
     port: 22,
     keys: %w('~/.ssh/tsundoku.pem'),
     forward_agent: true
-
-set :rails_env, "production"
-set :unicorn_rack_env, "production"
 
 # server-based syntax
 # ======================
