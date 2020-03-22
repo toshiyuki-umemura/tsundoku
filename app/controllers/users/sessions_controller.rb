@@ -5,8 +5,8 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
-  def new
-    session.delete('devise.omniauth_data')
-    super
-  end
+  # def new
+  #   session.delete('devise.omniauth_data')
+  #   super
+  # end
 end
