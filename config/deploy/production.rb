@@ -1,4 +1,7 @@
 server '18.180.122.183', user: 'ec2-user', roles: %w{app db web}
+set :ssh_options, {
+  keys: [File.expand_path('~/.ssh/tsundoku_2.pem)')]
+ }
 
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
