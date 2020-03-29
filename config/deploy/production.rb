@@ -1,4 +1,4 @@
-server '18.180.122.183', user: 'ec2-user', roles: %w{app db web}
+server '18.178.4.190', user: 'ec2-user', roles: %w{app db web}
 
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
