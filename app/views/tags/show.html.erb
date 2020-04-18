@@ -4,11 +4,14 @@
   <!-- 同じタグでソートした投稿一覧 -->
   <div class="top__main">
     <section class="top__main--section">
-    <% @books.each do |book| %>
-      <% book.tags.each do |t| %>
-        <h3 class="top__main--title">「<%= t.tag %>」タグ一覧</h3>
+    <h3 class="top__main--title">「
+      <% @books.each do |book| %>
+        <% book.tags.each do |t| %>
+          <%= t.tag[0] %>
+        <% end %>
       <% end %>
-    <% end %>
+      」タグ一覧
+    </h3>
 
         <%= render "books/index" %>
 
